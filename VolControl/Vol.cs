@@ -7,8 +7,11 @@ using System.Runtime.InteropServices;
 
 
 namespace VolControl
-{      
-        public static class AudioManager
+{
+
+    //Orginal Source https://gist.github.com/sverrirs/d099b34b7f72bb4fb386
+
+    public static class AudioManager
         {
             #region Master Volume Manipulation
 
