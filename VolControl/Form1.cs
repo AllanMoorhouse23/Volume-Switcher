@@ -13,7 +13,7 @@ namespace VolControl
 {
     public partial class Form1 : Form
     {
-
+        //TEST
         //Is the app volume reduced
         bool AppChangedVol = false;
         //Orignal Volume
