@@ -13,7 +13,7 @@ namespace VolControl
 {
     public partial class Form1 : Form
     {
-        //TEST now that 2FA is enabled hhhhhhhhhh
+        //TEST now that 2FA is enabled
         //Is the app volume reduced
         bool AppChangedVol = false;
         //Orignal Volume
