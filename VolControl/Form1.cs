@@ -23,6 +23,15 @@ namespace VolControl
         //Current Volume
         float? AppCurVol;
 
+
+        //Is the app volume reduced
+        bool AppChangedVol2 = false;
+        //Target Volume 2
+        float? AppTargVol2 = 0;
+        //Current Volume 2
+        float? AppCurVol2;
+
+
         ShortcutKey key = new ShortcutKey();
 
         private List<_App> _apps = new List<_App>();
@@ -35,7 +44,7 @@ namespace VolControl
             lblMasterVol.Text = "Master Volume: " + AudioManager.GetMasterVolume().ToString();
 
             timer1.Start();
-            toggleUI(false);
+            toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, false);
             Process[] processes = Process.GetProcesses();
 
             foreach (Process p in processes)
@@ -163,21 +172,26 @@ namespace VolControl
 
         }
         
-        private void toggleUI(bool state) {
+        private void toggleUI(TrackBar currentVOL, TrackBar targetVOL, Button changeVOL, Panel currentPnlVOL, Panel targetPnlVOL, bool state) {
             if (state == true)
             {
-                trkBarCurVol.Enabled = true;
-                trkBarTargVol.Enabled = true;
-                btnChangeVol.Enabled = true;
-                panel2.BackColor = Color.FromArgb(192, 255, 192);
-                panel1.BackColor = Color.FromArgb(255, 192, 192);
+               
+                currentVOL.Enabled = true;
+                targetVOL.Enabled = true;
+                changeVOL.Enabled = true;
+
+                currentPnlVOL.BackColor = Color.FromArgb(192, 255, 192);
+                targetPnlVOL.BackColor = Color.FromArgb(255, 192, 192);
+
             }
             else {
-                trkBarCurVol.Enabled = false;
-                trkBarTargVol.Enabled = false;
-                btnChangeVol.Enabled = false;
-                panel1.BackColor = Color.FromArgb(255, 192, 192);
-                panel2.BackColor = Color.FromArgb(255, 192, 192);
+               
+                currentVOL.Enabled = false;
+                targetVOL.Enabled = false;
+                changeVOL.Enabled = false;
+
+                currentPnlVOL.BackColor = Color.FromArgb(255, 192, 192);
+                targetPnlVOL.BackColor = Color.FromArgb(255, 192, 192);
             }
         }
 
@@ -217,16 +231,21 @@ namespace VolControl
                 
                 AppCurVol = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
                 trkBarCurVol.Value = (int)AppCurVol;
-                toggleUI(true);
+                toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, true);
                 lblCurVol.Text = AppCurVol + "%";
             }
             catch (Exception ex) {
-                toggleUI(false);
+                toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, false);
                 lblCurVol.Text = "0";
                trkBarCurVol.Value = 0;
                 Console.WriteLine(ex.Message);
             }
         }
+
+
+
+
+
 
         //Second app volume
         private void comBoxApps2_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,19 +269,23 @@ namespace VolControl
             try
             {
 
-                AppCurVol = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
-                trkBarCurVol.Value = (int)AppCurVol;
-                toggleUI(true);
-                lblCurVol.Text = AppCurVol + "%";
+                AppCurVol2 = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
+                trkBarCurVol.Value = (int)AppCurVol2;
+                //toggleUI(true);
+              //  lblCurVol2.Text = AppCurVol2 + "%";
             }
             catch (Exception ex)
             {
-                toggleUI(false);
+              //  toggleUI(false);
                 lblCurVol.Text = "0";
                 trkBarCurVol.Value = 0;
                 Console.WriteLine(ex.Message);
             }
         }
+
+
+
+
 
 
 
