@@ -32,6 +32,10 @@ namespace VolControl
             get { return _ProID; }
         }
 
+        public void removePID(int toRemove) {
+
+        }
+
         public void Output() {
 
             Console.Write(_Name);

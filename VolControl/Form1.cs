@@ -61,7 +61,10 @@ namespace VolControl
             {
                 if (!String.IsNullOrEmpty(p.MainWindowTitle))
                 {
+                    
+
                     Console.WriteLine("Adding to list: " + p.ProcessName);
+
                     _OpenedApps.Add(p.ProcessName);
 
                     //_apps.Add(new _App(p.ProcessName, p.Id));
@@ -81,10 +84,13 @@ namespace VolControl
                    foreach (_App ap in _apps) {
                       if (p.ProcessName == ap.Name)
                      {
-                         //Add the ID to the existing list
-                          ap.AddId(p.Id);
-                         checkd = true;
-                        break;
+                            //Add the ID to the existing list
+                            ap.AddId(p.Id);
+
+                            checkd = true;
+                                
+                            break;
+                                
                    }
                     checkd = false;
                 }
@@ -100,6 +106,33 @@ namespace VolControl
             foreach (_App ap in _apps) {
                 ap.Output();
             }
+
+            bool delete = false;
+            List<int> PID = new List<int>();
+
+            //Check process ID's to check if they're actually making audio.
+            for (int i = 0; i < _apps.Count; i++) {
+                PID.Clear();
+                delete = false;
+
+                for (int j = 0; j < _apps[i].ProID.Count; j++) {
+
+                    float? test = AudioManager.GetApplicationVolume(_apps[i].ProID[j]);
+                    if (test == null) {
+                        PID.Add(_apps[i].ProID[j]);
+                        delete = true;
+                    }
+
+                }
+                if (delete == true) {
+                    for (int k = 0; k < PID.Count; k++) {
+                        Console.WriteLine("To Delete: " + PID[k].ToString());
+                    }
+
+                }
+
+            }
+
 
             for (int i = 0; i < _apps.Count; i++) {
 
