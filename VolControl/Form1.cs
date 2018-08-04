@@ -86,7 +86,7 @@ namespace VolControl
             for (int i = 0; i < _apps.Count; i++) {
 
                 comBoxApps.Items.Add(_apps[i].Name);
-
+                comBoxApps2.Items.Add(_apps[i].Name);
                 
             }
 
@@ -193,6 +193,8 @@ namespace VolControl
             lblTargVol.Text = trkBarTargVol.Value.ToString() + "%";
         }
 
+        //First app volume
+
         private void comBoxApps_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -225,5 +227,44 @@ namespace VolControl
                 Console.WriteLine(ex.Message);
             }
         }
+
+        //Second app volume
+        private void comBoxApps2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                comBoxProcesses2.Items.Clear();
+                for (int j = 0; j < _apps[comBoxApps2.SelectedIndex].ProID.Count; j++)
+                {
+                    comBoxProcesses2.Items.Add(_apps[comBoxApps2.SelectedIndex].ProID[j].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void comBoxProcesses2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                AppCurVol = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
+                trkBarCurVol.Value = (int)AppCurVol;
+                toggleUI(true);
+                lblCurVol.Text = AppCurVol + "%";
+            }
+            catch (Exception ex)
+            {
+                toggleUI(false);
+                lblCurVol.Text = "0";
+                trkBarCurVol.Value = 0;
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+
     }
 }
