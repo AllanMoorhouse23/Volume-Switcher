@@ -14,17 +14,33 @@ namespace VolControl
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(Keys key);
 
-        public bool keyPressed() {
+        public bool keyPressed(int appNumber) {
 
-            //0
-            if (GetAsyncKeyState(Keys.OemMinus) != 0)
+            if (appNumber == 1)
             {
-                return true;
+                //Dash Key
+                if (GetAsyncKeyState(Keys.OemMinus) != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else {
-                return false;
-            }
+                //Plus Key
+                if (GetAsyncKeyState(Keys.Oemplus) != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
+            }
+            
 
         }
 

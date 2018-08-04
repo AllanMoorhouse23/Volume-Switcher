@@ -150,13 +150,15 @@ namespace VolControl
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (key.keyPressed() == true)
+            if (key.keyPressed(1) == true)
             {
-                lblMasterVol.Text = "Shortcut key pressed";
-                //changeVolume();
+                lblAppVol.Text = "Shortcut key: -";
+                changeVolume(App1TarVolpnl, App1CurVolpnl, 0, App1apps, App1processes);
             }
-            else {
-
+            else if(key.keyPressed(2) == true)
+            {
+                lblAppVol.Text = "Shortcut key: +";
+                changeVolume(App2TarVolpnl, App2CurVolpnl, 1, App2apps, App2processes);
             }
         }
 
@@ -240,6 +242,12 @@ namespace VolControl
             }
         }
 
+        private void App1trkBarCurVol_ValueChanged(object sender, EventArgs e)
+        {
+            AppCurVol[0] = App1trkBarCurVol.Value;
+            lblCurVol.Text = App1trkBarCurVol.Value.ToString() + "%";
+        }
+
         private void App1trkBarTarVol_ValueChanged(object sender, EventArgs e)
         {
             AppTargVol[0] = App1trkBarTarVol.Value;
@@ -270,7 +278,7 @@ namespace VolControl
             }
         }
 
-        private void comBoxProcesses2_SelectedIndexChanged(object sender, EventArgs e)
+        private void App2processes_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -299,6 +307,10 @@ namespace VolControl
             changeVolume(App2TarVolpnl, App2CurVolpnl, 1, App2apps, App2processes);
         }
 
-       
+        private void App2trkBarCurVol_ValueChanged(object sender, EventArgs e)
+        {
+            AppCurVol[1] = App2trkBarCurVol.Value;
+            App2lblCurVol.Text = App2trkBarCurVol.Value.ToString() + "%";
+        }
     }
 }

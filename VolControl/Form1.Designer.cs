@@ -85,7 +85,7 @@
             // lblMasterVol
             // 
             this.lblMasterVol.AutoSize = true;
-            this.lblMasterVol.Location = new System.Drawing.Point(8, 507);
+            this.lblMasterVol.Location = new System.Drawing.Point(35, 542);
             this.lblMasterVol.Name = "lblMasterVol";
             this.lblMasterVol.Size = new System.Drawing.Size(80, 13);
             this.lblMasterVol.TabIndex = 0;
@@ -189,7 +189,7 @@
             // lblAppVol
             // 
             this.lblAppVol.AutoSize = true;
-            this.lblAppVol.Location = new System.Drawing.Point(141, 507);
+            this.lblAppVol.Location = new System.Drawing.Point(156, 542);
             this.lblAppVol.Name = "lblAppVol";
             this.lblAppVol.Size = new System.Drawing.Size(67, 13);
             this.lblAppVol.TabIndex = 10;
@@ -228,6 +228,7 @@
             this.App1trkBarCurVol.TabIndex = 5;
             this.App1trkBarCurVol.TickFrequency = 10;
             this.App1trkBarCurVol.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App1trkBarCurVol.ValueChanged += new System.EventHandler(this.App1trkBarCurVol_ValueChanged);
             // 
             // label7
             // 
@@ -292,7 +293,7 @@
             this.App2processes.Name = "App2processes";
             this.App2processes.Size = new System.Drawing.Size(240, 21);
             this.App2processes.TabIndex = 18;
-            this.App2processes.SelectedIndexChanged += new System.EventHandler(this.comBoxProcesses2_SelectedIndexChanged);
+            this.App2processes.SelectedIndexChanged += new System.EventHandler(this.App2processes_SelectedIndexChanged);
             // 
             // App2CurVolpnl
             // 
@@ -327,6 +328,7 @@
             this.App2trkBarCurVol.TabIndex = 5;
             this.App2trkBarCurVol.TickFrequency = 10;
             this.App2trkBarCurVol.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App2trkBarCurVol.ValueChanged += new System.EventHandler(this.App2trkBarCurVol_ValueChanged);
             // 
             // label11
             // 
@@ -453,24 +455,22 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(269, 559);
+            this.tabControl1.Size = new System.Drawing.Size(269, 529);
             this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.lblMasterVol);
             this.tabPage1.Controls.Add(this.App1btnChangeVol);
             this.tabPage1.Controls.Add(this.App1apps);
             this.tabPage1.Controls.Add(this.App1TarVolpnl);
-            this.tabPage1.Controls.Add(this.lblAppVol);
             this.tabPage1.Controls.Add(this.App1CurVolpnl);
             this.tabPage1.Controls.Add(this.App1processes);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(261, 533);
+            this.tabPage1.Size = new System.Drawing.Size(261, 503);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "App 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -487,7 +487,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(261, 533);
+            this.tabPage2.Size = new System.Drawing.Size(261, 503);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "App 2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -498,6 +498,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 564);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.lblMasterVol);
+            this.Controls.Add(this.lblAppVol);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -519,9 +521,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.App2trkBarTarVol)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
