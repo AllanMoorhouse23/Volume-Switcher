@@ -63,7 +63,7 @@ namespace VolControl
                 {
                     
 
-                    Console.WriteLine("Adding to list: " + p.ProcessName);
+                    //Console.WriteLine("Adding to list: " + p.ProcessName);
 
                     _OpenedApps.Add(p.ProcessName);
 
@@ -109,7 +109,7 @@ namespace VolControl
 
             bool delete = false;
             List<int> PID = new List<int>();
-
+            List<int> appToDelete = new List<int>();
             //Check process ID's to check if they're actually making audio.
             for (int i = 0; i < _apps.Count; i++) {
                 PID.Clear();
@@ -126,13 +126,16 @@ namespace VolControl
                 }
                 if (delete == true) {
                     for (int k = 0; k < PID.Count; k++) {
-                        Console.WriteLine("To Delete: " + PID[k].ToString());
+                        //Console.WriteLine("To Delete: " + PID[k].ToString());
+                        _apps[i].removePID(PID[k]);
+                        
                     }
-
+                    
                 }
 
             }
 
+          
 
             for (int i = 0; i < _apps.Count; i++) {
 

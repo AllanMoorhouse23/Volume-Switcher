@@ -33,6 +33,12 @@ namespace VolControl
         }
 
         public void removePID(int toRemove) {
+            
+            for (int i = 0; i < _ProID.Count; i++) {
+                if (toRemove == _ProID[i]) {
+                    _ProID.RemoveAt(i);
+                }
+            }
 
         }
 
