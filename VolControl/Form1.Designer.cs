@@ -30,53 +30,53 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblMasterVol = new System.Windows.Forms.Label();
-            this.btnChangeVol = new System.Windows.Forms.Button();
-            this.comBoxApps = new System.Windows.Forms.ComboBox();
+            this.App1btnChangeVol = new System.Windows.Forms.Button();
+            this.App1apps = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.trkBarTargVol = new System.Windows.Forms.TrackBar();
+            this.App1trkBarTarVol = new System.Windows.Forms.TrackBar();
             this.lblTargVol = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.App1TarVolpnl = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAppVol = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.App1CurVolpnl = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.trkBarCurVol = new System.Windows.Forms.TrackBar();
+            this.App1trkBarCurVol = new System.Windows.Forms.TrackBar();
             this.label7 = new System.Windows.Forms.Label();
             this.lblCurVol = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comBoxProcesses = new System.Windows.Forms.ComboBox();
+            this.App1processes = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comBoxProcesses2 = new System.Windows.Forms.ComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.App2processes = new System.Windows.Forms.ComboBox();
+            this.App2CurVolpnl = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.App2trkBarCurVol = new System.Windows.Forms.TrackBar();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.App2lblCurVol = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.App2TarVolpnl = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.App2trkBarTarVol = new System.Windows.Forms.TrackBar();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.App2lblTarVol = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.comBoxApps2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.App2apps = new System.Windows.Forms.ComboBox();
+            this.App2btnChangeVol = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.trkBarTargVol)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trkBarCurVol)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.App1trkBarTarVol)).BeginInit();
+            this.App1TarVolpnl.SuspendLayout();
+            this.App1CurVolpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App1trkBarCurVol)).BeginInit();
+            this.App2CurVolpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App2trkBarCurVol)).BeginInit();
+            this.App2TarVolpnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App2trkBarTarVol)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,25 +91,25 @@
             this.lblMasterVol.TabIndex = 0;
             this.lblMasterVol.Text = "Master Volume:";
             // 
-            // btnChangeVol
+            // App1btnChangeVol
             // 
-            this.btnChangeVol.Location = new System.Drawing.Point(9, 472);
-            this.btnChangeVol.Name = "btnChangeVol";
-            this.btnChangeVol.Size = new System.Drawing.Size(240, 23);
-            this.btnChangeVol.TabIndex = 2;
-            this.btnChangeVol.Text = "Change Volume";
-            this.btnChangeVol.UseVisualStyleBackColor = true;
-            this.btnChangeVol.Click += new System.EventHandler(this.btnLowerVol_Click);
+            this.App1btnChangeVol.Location = new System.Drawing.Point(9, 472);
+            this.App1btnChangeVol.Name = "App1btnChangeVol";
+            this.App1btnChangeVol.Size = new System.Drawing.Size(240, 23);
+            this.App1btnChangeVol.TabIndex = 2;
+            this.App1btnChangeVol.Text = "Change Volume";
+            this.App1btnChangeVol.UseVisualStyleBackColor = true;
+            this.App1btnChangeVol.Click += new System.EventHandler(this.App1btnChangeVol_Click);
             // 
-            // comBoxApps
+            // App1apps
             // 
-            this.comBoxApps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBoxApps.FormattingEnabled = true;
-            this.comBoxApps.Location = new System.Drawing.Point(7, 31);
-            this.comBoxApps.Name = "comBoxApps";
-            this.comBoxApps.Size = new System.Drawing.Size(240, 21);
-            this.comBoxApps.TabIndex = 3;
-            this.comBoxApps.SelectedIndexChanged += new System.EventHandler(this.comBoxApps_SelectedIndexChanged);
+            this.App1apps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.App1apps.FormattingEnabled = true;
+            this.App1apps.Location = new System.Drawing.Point(7, 31);
+            this.App1apps.Name = "App1apps";
+            this.App1apps.Size = new System.Drawing.Size(240, 21);
+            this.App1apps.TabIndex = 3;
+            this.App1apps.SelectedIndexChanged += new System.EventHandler(this.App1apps_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -120,17 +120,17 @@
             this.label3.Text = "Target App:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // trkBarTargVol
+            // App1trkBarTarVol
             // 
-            this.trkBarTargVol.Location = new System.Drawing.Point(38, 49);
-            this.trkBarTargVol.Maximum = 100;
-            this.trkBarTargVol.Name = "trkBarTargVol";
-            this.trkBarTargVol.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trkBarTargVol.Size = new System.Drawing.Size(45, 295);
-            this.trkBarTargVol.TabIndex = 5;
-            this.trkBarTargVol.TickFrequency = 10;
-            this.trkBarTargVol.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trkBarTargVol.ValueChanged += new System.EventHandler(this.trkBarTargVol_ValueChanged);
+            this.App1trkBarTarVol.Location = new System.Drawing.Point(38, 49);
+            this.App1trkBarTarVol.Maximum = 100;
+            this.App1trkBarTarVol.Name = "App1trkBarTarVol";
+            this.App1trkBarTarVol.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.App1trkBarTarVol.Size = new System.Drawing.Size(45, 295);
+            this.App1trkBarTarVol.TabIndex = 5;
+            this.App1trkBarTarVol.TickFrequency = 10;
+            this.App1trkBarTarVol.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App1trkBarTarVol.ValueChanged += new System.EventHandler(this.App1trkBarTarVol_ValueChanged);
             // 
             // lblTargVol
             // 
@@ -163,19 +163,19 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel1
+            // App1TarVolpnl
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.trkBarTargVol);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.lblTargVol);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(132, 119);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 347);
-            this.panel1.TabIndex = 9;
+            this.App1TarVolpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.App1TarVolpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.App1TarVolpnl.Controls.Add(this.label1);
+            this.App1TarVolpnl.Controls.Add(this.App1trkBarTarVol);
+            this.App1TarVolpnl.Controls.Add(this.label6);
+            this.App1TarVolpnl.Controls.Add(this.lblTargVol);
+            this.App1TarVolpnl.Controls.Add(this.label5);
+            this.App1TarVolpnl.Location = new System.Drawing.Point(132, 119);
+            this.App1TarVolpnl.Name = "App1TarVolpnl";
+            this.App1TarVolpnl.Size = new System.Drawing.Size(117, 347);
+            this.App1TarVolpnl.TabIndex = 9;
             // 
             // label1
             // 
@@ -195,19 +195,19 @@
             this.lblAppVol.TabIndex = 10;
             this.lblAppVol.Text = "App Volume:";
             // 
-            // panel2
+            // App1CurVolpnl
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.trkBarCurVol);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.lblCurVol);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(9, 119);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 347);
-            this.panel2.TabIndex = 10;
+            this.App1CurVolpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.App1CurVolpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.App1CurVolpnl.Controls.Add(this.label4);
+            this.App1CurVolpnl.Controls.Add(this.App1trkBarCurVol);
+            this.App1CurVolpnl.Controls.Add(this.label7);
+            this.App1CurVolpnl.Controls.Add(this.lblCurVol);
+            this.App1CurVolpnl.Controls.Add(this.label9);
+            this.App1CurVolpnl.Location = new System.Drawing.Point(9, 119);
+            this.App1CurVolpnl.Name = "App1CurVolpnl";
+            this.App1CurVolpnl.Size = new System.Drawing.Size(117, 347);
+            this.App1CurVolpnl.TabIndex = 10;
             // 
             // label4
             // 
@@ -218,16 +218,16 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "1st Volume:";
             // 
-            // trkBarCurVol
+            // App1trkBarCurVol
             // 
-            this.trkBarCurVol.Location = new System.Drawing.Point(38, 49);
-            this.trkBarCurVol.Maximum = 100;
-            this.trkBarCurVol.Name = "trkBarCurVol";
-            this.trkBarCurVol.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trkBarCurVol.Size = new System.Drawing.Size(45, 295);
-            this.trkBarCurVol.TabIndex = 5;
-            this.trkBarCurVol.TickFrequency = 10;
-            this.trkBarCurVol.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App1trkBarCurVol.Location = new System.Drawing.Point(38, 49);
+            this.App1trkBarCurVol.Maximum = 100;
+            this.App1trkBarCurVol.Name = "App1trkBarCurVol";
+            this.App1trkBarCurVol.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.App1trkBarCurVol.Size = new System.Drawing.Size(45, 295);
+            this.App1trkBarCurVol.TabIndex = 5;
+            this.App1trkBarCurVol.TickFrequency = 10;
+            this.App1trkBarCurVol.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // label7
             // 
@@ -256,15 +256,15 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "0%";
             // 
-            // comBoxProcesses
+            // App1processes
             // 
-            this.comBoxProcesses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBoxProcesses.FormattingEnabled = true;
-            this.comBoxProcesses.Location = new System.Drawing.Point(7, 83);
-            this.comBoxProcesses.Name = "comBoxProcesses";
-            this.comBoxProcesses.Size = new System.Drawing.Size(240, 21);
-            this.comBoxProcesses.TabIndex = 11;
-            this.comBoxProcesses.SelectedIndexChanged += new System.EventHandler(this.comBoxProcesses_SelectedIndexChanged);
+            this.App1processes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.App1processes.FormattingEnabled = true;
+            this.App1processes.Location = new System.Drawing.Point(7, 83);
+            this.App1processes.Name = "App1processes";
+            this.App1processes.Size = new System.Drawing.Size(240, 21);
+            this.App1processes.TabIndex = 11;
+            this.App1processes.SelectedIndexChanged += new System.EventHandler(this.App1processes_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -284,29 +284,29 @@
             this.label2.Text = "Target Process:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comBoxProcesses2
+            // App2processes
             // 
-            this.comBoxProcesses2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBoxProcesses2.FormattingEnabled = true;
-            this.comBoxProcesses2.Location = new System.Drawing.Point(7, 83);
-            this.comBoxProcesses2.Name = "comBoxProcesses2";
-            this.comBoxProcesses2.Size = new System.Drawing.Size(240, 21);
-            this.comBoxProcesses2.TabIndex = 18;
-            this.comBoxProcesses2.SelectedIndexChanged += new System.EventHandler(this.comBoxProcesses2_SelectedIndexChanged);
+            this.App2processes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.App2processes.FormattingEnabled = true;
+            this.App2processes.Location = new System.Drawing.Point(7, 83);
+            this.App2processes.Name = "App2processes";
+            this.App2processes.Size = new System.Drawing.Size(240, 21);
+            this.App2processes.TabIndex = 18;
+            this.App2processes.SelectedIndexChanged += new System.EventHandler(this.comBoxProcesses2_SelectedIndexChanged);
             // 
-            // panel3
+            // App2CurVolpnl
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.trackBar1);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Location = new System.Drawing.Point(9, 119);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(117, 347);
-            this.panel3.TabIndex = 17;
+            this.App2CurVolpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.App2CurVolpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.App2CurVolpnl.Controls.Add(this.label10);
+            this.App2CurVolpnl.Controls.Add(this.App2trkBarCurVol);
+            this.App2CurVolpnl.Controls.Add(this.label11);
+            this.App2CurVolpnl.Controls.Add(this.App2lblCurVol);
+            this.App2CurVolpnl.Controls.Add(this.label13);
+            this.App2CurVolpnl.Location = new System.Drawing.Point(9, 119);
+            this.App2CurVolpnl.Name = "App2CurVolpnl";
+            this.App2CurVolpnl.Size = new System.Drawing.Size(117, 347);
+            this.App2CurVolpnl.TabIndex = 17;
             // 
             // label10
             // 
@@ -317,16 +317,16 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "1st Volume:";
             // 
-            // trackBar1
+            // App2trkBarCurVol
             // 
-            this.trackBar1.Location = new System.Drawing.Point(38, 49);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 295);
-            this.trackBar1.TabIndex = 5;
-            this.trackBar1.TickFrequency = 10;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App2trkBarCurVol.Location = new System.Drawing.Point(38, 49);
+            this.App2trkBarCurVol.Maximum = 100;
+            this.App2trkBarCurVol.Name = "App2trkBarCurVol";
+            this.App2trkBarCurVol.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.App2trkBarCurVol.Size = new System.Drawing.Size(45, 295);
+            this.App2trkBarCurVol.TabIndex = 5;
+            this.App2trkBarCurVol.TickFrequency = 10;
+            this.App2trkBarCurVol.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // label11
             // 
@@ -337,14 +337,14 @@
             this.label11.TabIndex = 8;
             this.label11.Text = "100%";
             // 
-            // label12
+            // App2lblCurVol
             // 
-            this.label12.Location = new System.Drawing.Point(22, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "0";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.App2lblCurVol.Location = new System.Drawing.Point(22, 33);
+            this.App2lblCurVol.Name = "App2lblCurVol";
+            this.App2lblCurVol.Size = new System.Drawing.Size(76, 13);
+            this.App2lblCurVol.TabIndex = 6;
+            this.App2lblCurVol.Text = "0";
+            this.App2lblCurVol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -355,19 +355,19 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "0%";
             // 
-            // panel4
+            // App2TarVolpnl
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.trackBar2);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(132, 119);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(117, 347);
-            this.panel4.TabIndex = 16;
+            this.App2TarVolpnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.App2TarVolpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.App2TarVolpnl.Controls.Add(this.label14);
+            this.App2TarVolpnl.Controls.Add(this.App2trkBarTarVol);
+            this.App2TarVolpnl.Controls.Add(this.label15);
+            this.App2TarVolpnl.Controls.Add(this.App2lblTarVol);
+            this.App2TarVolpnl.Controls.Add(this.label17);
+            this.App2TarVolpnl.Location = new System.Drawing.Point(132, 119);
+            this.App2TarVolpnl.Name = "App2TarVolpnl";
+            this.App2TarVolpnl.Size = new System.Drawing.Size(117, 347);
+            this.App2TarVolpnl.TabIndex = 16;
             // 
             // label14
             // 
@@ -378,16 +378,17 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "2nd Volume:";
             // 
-            // trackBar2
+            // App2trkBarTarVol
             // 
-            this.trackBar2.Location = new System.Drawing.Point(38, 49);
-            this.trackBar2.Maximum = 100;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar2.Size = new System.Drawing.Size(45, 295);
-            this.trackBar2.TabIndex = 5;
-            this.trackBar2.TickFrequency = 10;
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App2trkBarTarVol.Location = new System.Drawing.Point(38, 49);
+            this.App2trkBarTarVol.Maximum = 100;
+            this.App2trkBarTarVol.Name = "App2trkBarTarVol";
+            this.App2trkBarTarVol.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.App2trkBarTarVol.Size = new System.Drawing.Size(45, 295);
+            this.App2trkBarTarVol.TabIndex = 5;
+            this.App2trkBarTarVol.TickFrequency = 10;
+            this.App2trkBarTarVol.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.App2trkBarTarVol.ValueChanged += new System.EventHandler(this.App2trkBarTarVol_ValueChanged);
             // 
             // label15
             // 
@@ -398,14 +399,14 @@
             this.label15.TabIndex = 8;
             this.label15.Text = "100%";
             // 
-            // label16
+            // App2lblTarVol
             // 
-            this.label16.Location = new System.Drawing.Point(22, 33);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "0";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.App2lblTarVol.Location = new System.Drawing.Point(22, 33);
+            this.App2lblTarVol.Name = "App2lblTarVol";
+            this.App2lblTarVol.Size = new System.Drawing.Size(76, 13);
+            this.App2lblTarVol.TabIndex = 6;
+            this.App2lblTarVol.Text = "0";
+            this.App2lblTarVol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
             // 
@@ -425,24 +426,25 @@
             this.label18.Text = "Target App:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comBoxApps2
+            // App2apps
             // 
-            this.comBoxApps2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBoxApps2.FormattingEnabled = true;
-            this.comBoxApps2.Location = new System.Drawing.Point(7, 31);
-            this.comBoxApps2.Name = "comBoxApps2";
-            this.comBoxApps2.Size = new System.Drawing.Size(240, 21);
-            this.comBoxApps2.TabIndex = 14;
-            this.comBoxApps2.SelectedIndexChanged += new System.EventHandler(this.comBoxApps2_SelectedIndexChanged);
+            this.App2apps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.App2apps.FormattingEnabled = true;
+            this.App2apps.Location = new System.Drawing.Point(7, 31);
+            this.App2apps.Name = "App2apps";
+            this.App2apps.Size = new System.Drawing.Size(240, 21);
+            this.App2apps.TabIndex = 14;
+            this.App2apps.SelectedIndexChanged += new System.EventHandler(this.App2apps_SelectedIndexChanged);
             // 
-            // button1
+            // App2btnChangeVol
             // 
-            this.button1.Location = new System.Drawing.Point(9, 472);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(240, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Change Volume";
-            this.button1.UseVisualStyleBackColor = true;
+            this.App2btnChangeVol.Location = new System.Drawing.Point(9, 472);
+            this.App2btnChangeVol.Name = "App2btnChangeVol";
+            this.App2btnChangeVol.Size = new System.Drawing.Size(240, 23);
+            this.App2btnChangeVol.TabIndex = 13;
+            this.App2btnChangeVol.Text = "Change Volume";
+            this.App2btnChangeVol.UseVisualStyleBackColor = true;
+            this.App2btnChangeVol.Click += new System.EventHandler(this.App2btnChangeVol_Click);
             // 
             // tabControl1
             // 
@@ -458,12 +460,12 @@
             // 
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.lblMasterVol);
-            this.tabPage1.Controls.Add(this.btnChangeVol);
-            this.tabPage1.Controls.Add(this.comBoxApps);
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.App1btnChangeVol);
+            this.tabPage1.Controls.Add(this.App1apps);
+            this.tabPage1.Controls.Add(this.App1TarVolpnl);
             this.tabPage1.Controls.Add(this.lblAppVol);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.comBoxProcesses);
+            this.tabPage1.Controls.Add(this.App1CurVolpnl);
+            this.tabPage1.Controls.Add(this.App1processes);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -477,11 +479,11 @@
             // 
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.comBoxProcesses2);
-            this.tabPage2.Controls.Add(this.comBoxApps2);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.panel4);
+            this.tabPage2.Controls.Add(this.App2btnChangeVol);
+            this.tabPage2.Controls.Add(this.App2processes);
+            this.tabPage2.Controls.Add(this.App2apps);
+            this.tabPage2.Controls.Add(this.App2CurVolpnl);
+            this.tabPage2.Controls.Add(this.App2TarVolpnl);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -503,18 +505,18 @@
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trkBarTargVol)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trkBarCurVol)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.App1trkBarTarVol)).EndInit();
+            this.App1TarVolpnl.ResumeLayout(false);
+            this.App1TarVolpnl.PerformLayout();
+            this.App1CurVolpnl.ResumeLayout(false);
+            this.App1CurVolpnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App1trkBarCurVol)).EndInit();
+            this.App2CurVolpnl.ResumeLayout(false);
+            this.App2CurVolpnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App2trkBarCurVol)).EndInit();
+            this.App2TarVolpnl.ResumeLayout(false);
+            this.App2TarVolpnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.App2trkBarTarVol)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -526,42 +528,42 @@
         #endregion
 
         private System.Windows.Forms.Label lblMasterVol;
-        private System.Windows.Forms.Button btnChangeVol;
-        private System.Windows.Forms.ComboBox comBoxApps;
+        private System.Windows.Forms.Button App1btnChangeVol;
+        private System.Windows.Forms.ComboBox App1apps;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TrackBar trkBarTargVol;
+        private System.Windows.Forms.TrackBar App1trkBarTarVol;
         private System.Windows.Forms.Label lblTargVol;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel App1TarVolpnl;
         private System.Windows.Forms.Label lblAppVol;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel App1CurVolpnl;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TrackBar trkBarCurVol;
+        private System.Windows.Forms.TrackBar App1trkBarCurVol;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblCurVol;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comBoxProcesses;
+        private System.Windows.Forms.ComboBox App1processes;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comBoxProcesses2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox App2processes;
+        private System.Windows.Forms.Panel App2CurVolpnl;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar App2trkBarCurVol;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label App2lblCurVol;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel App2TarVolpnl;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar App2trkBarTarVol;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label App2lblTarVol;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comBoxApps2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox App2apps;
+        private System.Windows.Forms.Button App2btnChangeVol;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

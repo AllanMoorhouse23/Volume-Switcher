@@ -13,23 +13,30 @@ namespace VolControl
 {
     public partial class Form1 : Form
     {
-        
+
         //Is the app volume reduced
-        bool AppChangedVol = false;
+        //bool AppChangedVol = false;
         //Orignal Volume
-        float? AppOrgVol;
+        //float? AppOrgVol;
         //Target Volume
-        float? AppTargVol = 0;
+        //float? AppTargVol = 0;
         //Current Volume
-        float? AppCurVol;
+        //float? AppCurVol;
 
 
         //Is the app volume reduced
-        bool AppChangedVol2 = false;
+
+        bool[] AppChangedVol = new bool[2];
+        float?[] AppCurVol = new float?[2];
+        float?[] AppTargVol = new float?[2];
+        
+        
+        //AppChangedVol[0] = true;
+
         //Target Volume 2
-        float? AppTargVol2 = 0;
+        //float? AppTargVol2 = 0;
         //Current Volume 2
-        float? AppCurVol2;
+        //float? AppCurVol2;
 
 
         ShortcutKey key = new ShortcutKey();
@@ -40,11 +47,14 @@ namespace VolControl
         public Form1()
         {
             InitializeComponent();
-
+           
             lblMasterVol.Text = "Master Volume: " + AudioManager.GetMasterVolume().ToString();
 
             timer1.Start();
-            toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, false);
+
+            toggleUI(App1trkBarCurVol, App1trkBarTarVol, App1btnChangeVol, App1TarVolpnl, App1CurVolpnl, false);
+            toggleUI(App2trkBarCurVol, App2trkBarTarVol, App2btnChangeVol, App2CurVolpnl, App2TarVolpnl, false);
+
             Process[] processes = Process.GetProcesses();
 
             foreach (Process p in processes)
@@ -71,18 +81,17 @@ namespace VolControl
                    foreach (_App ap in _apps) {
                       if (p.ProcessName == ap.Name)
                      {
-          //Add the ID to the existing list
+                         //Add the ID to the existing list
                           ap.AddId(p.Id);
                          checkd = true;
                         break;
                    }
                     checkd = false;
                 }
-                 if(checkd == false)
-                      {
+                if(checkd == false){
                        _apps.Add(new _App(p.ProcessName, p.Id));
-                    }
-                 }
+                }
+                }
               }
 
 
@@ -94,8 +103,8 @@ namespace VolControl
 
             for (int i = 0; i < _apps.Count; i++) {
 
-                comBoxApps.Items.Add(_apps[i].Name);
-                comBoxApps2.Items.Add(_apps[i].Name);
+                App1apps.Items.Add(_apps[i].Name);
+                App2apps.Items.Add(_apps[i].Name);
                 
             }
 
@@ -103,37 +112,32 @@ namespace VolControl
         }
 
 
-        /// <summary>
-        /// Change volume button pressed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnLowerVol_Click(object sender, EventArgs e)
-        {
-            changeVolume();
-            //AudioManager.SetApplicationVolume(14812, 20);
-        }
+ 
+        
+
+
+
 
         /// <summary>
         /// Change the volume of the targetted app
         /// </summary>
-        private void changeVolume() {
+        private void changeVolume(Panel pnl1, Panel pnl2, int appChanged, ComboBox apps, ComboBox processes) {
 
             try
             {
-                if (AppChangedVol == true)
+                if (AppChangedVol[appChanged] == true)
                 {
-                    AudioManager.SetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex], (float)AppCurVol);
-                    AppChangedVol = false;
-                    panel2.BackColor = Color.FromArgb(192, 255, 192);
-                    panel1.BackColor = Color.FromArgb(255, 192, 192);
+                    AudioManager.SetApplicationVolume(_apps[apps.SelectedIndex].ProID[processes.SelectedIndex], (float)AppCurVol[appChanged]);
+                    AppChangedVol[appChanged] = false;
+                    pnl2.BackColor = Color.FromArgb(192, 255, 192);
+                    pnl1.BackColor = Color.FromArgb(255, 192, 192);
                 }
                 else
                 {
-                    AudioManager.SetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex], (float)AppTargVol);
-                    AppChangedVol = true;
-                    panel1.BackColor = Color.FromArgb(192, 255, 192);
-                    panel2.BackColor = Color.FromArgb(255, 192, 192);
+                    AudioManager.SetApplicationVolume(_apps[apps.SelectedIndex].ProID[processes.SelectedIndex], (float)AppTargVol[appChanged]);
+                    AppChangedVol[appChanged] = true;
+                    pnl1.BackColor = Color.FromArgb(192, 255, 192);
+                    pnl2.BackColor = Color.FromArgb(255, 192, 192);
                 }
 
             }
@@ -149,7 +153,7 @@ namespace VolControl
             if (key.keyPressed() == true)
             {
                 lblMasterVol.Text = "Shortcut key pressed";
-                changeVolume();
+                //changeVolume();
             }
             else {
 
@@ -196,27 +200,22 @@ namespace VolControl
         }
 
 
-        /// <summary>
-        /// Set the target volume and display it
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void trkBarTargVol_ValueChanged(object sender, EventArgs e)
-        {
-            AppTargVol = trkBarTargVol.Value ;
-            lblTargVol.Text = trkBarTargVol.Value.ToString() + "%";
-        }
+
+
+
+
+
+
 
         //First app volume
-
-        private void comBoxApps_SelectedIndexChanged(object sender, EventArgs e)
+        private void App1apps_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                comBoxProcesses.Items.Clear();
-                for (int j = 0; j < _apps[comBoxApps.SelectedIndex].ProID.Count; j++)
+                App1processes.Items.Clear();
+                for (int j = 0; j < _apps[App1apps.SelectedIndex].ProID.Count; j++)
                 {
-                    comBoxProcesses.Items.Add(_apps[comBoxApps.SelectedIndex].ProID[j].ToString());
+                    App1processes.Items.Add(_apps[App1apps.SelectedIndex].ProID[j].ToString());
                 }
             }
             catch (Exception ex) {
@@ -224,38 +223,45 @@ namespace VolControl
             }
         }
 
-        private void comBoxProcesses_SelectedIndexChanged(object sender, EventArgs e)
+        private void App1processes_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
-            {
-                
-                AppCurVol = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
-                trkBarCurVol.Value = (int)AppCurVol;
-                toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, true);
-                lblCurVol.Text = AppCurVol + "%";
+            {    
+                AppCurVol[0] = AudioManager.GetApplicationVolume(_apps[App1apps.SelectedIndex].ProID[App1processes.SelectedIndex]);
+                App1trkBarCurVol.Value = (int)AppCurVol[0];
+                toggleUI(App1trkBarCurVol, App1trkBarTarVol, App1btnChangeVol, App1CurVolpnl, App1TarVolpnl,  true);
+                lblCurVol.Text = AppCurVol[0] + "%";
             }
             catch (Exception ex) {
-                toggleUI(trkBarCurVol, trkBarTargVol, btnChangeVol, panel1, panel2, false);
+                toggleUI(App1trkBarCurVol, App1trkBarTarVol, App1btnChangeVol, App1CurVolpnl, App1TarVolpnl,  false);
                 lblCurVol.Text = "0";
-               trkBarCurVol.Value = 0;
+                App1trkBarCurVol.Value = 0;
                 Console.WriteLine(ex.Message);
             }
         }
 
+        private void App1trkBarTarVol_ValueChanged(object sender, EventArgs e)
+        {
+            AppTargVol[0] = App1trkBarTarVol.Value;
+            lblTargVol.Text = App1trkBarTarVol.Value.ToString() + "%";
+        }
 
-
+        private void App1btnChangeVol_Click(object sender, EventArgs e)
+        {
+            changeVolume(App1TarVolpnl, App1CurVolpnl, 0, App1apps, App1processes);
+        }
 
 
 
         //Second app volume
-        private void comBoxApps2_SelectedIndexChanged(object sender, EventArgs e)
+        private void App2apps_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                comBoxProcesses2.Items.Clear();
-                for (int j = 0; j < _apps[comBoxApps2.SelectedIndex].ProID.Count; j++)
+                App2processes.Items.Clear();
+                for (int j = 0; j < _apps[App2apps.SelectedIndex].ProID.Count; j++)
                 {
-                    comBoxProcesses2.Items.Add(_apps[comBoxApps2.SelectedIndex].ProID[j].ToString());
+                    App2processes.Items.Add(_apps[App2apps.SelectedIndex].ProID[j].ToString());
                 }
             }
             catch (Exception ex)
@@ -268,26 +274,31 @@ namespace VolControl
         {
             try
             {
-
-                AppCurVol2 = AudioManager.GetApplicationVolume(_apps[comBoxApps.SelectedIndex].ProID[comBoxProcesses.SelectedIndex]);
-                trkBarCurVol.Value = (int)AppCurVol2;
-                //toggleUI(true);
-              //  lblCurVol2.Text = AppCurVol2 + "%";
+                AppCurVol[1] = AudioManager.GetApplicationVolume(_apps[App2apps.SelectedIndex].ProID[App2processes.SelectedIndex]);
+                App2trkBarCurVol.Value = (int)AppCurVol[1];
+                toggleUI(App2trkBarCurVol, App2trkBarTarVol, App2btnChangeVol, App2CurVolpnl, App2TarVolpnl, true);
+                App2lblCurVol.Text = AppCurVol[1] + "%";
             }
             catch (Exception ex)
             {
-              //  toggleUI(false);
-                lblCurVol.Text = "0";
-                trkBarCurVol.Value = 0;
+                toggleUI(App2trkBarCurVol, App2trkBarTarVol, App2btnChangeVol, App2CurVolpnl, App2TarVolpnl, false);
+                App2lblCurVol.Text = "0";
+                App2trkBarCurVol.Value = 0;
                 Console.WriteLine(ex.Message);
             }
         }
 
+        private void App2trkBarTarVol_ValueChanged(object sender, EventArgs e)
+        {
+            AppTargVol[1] = App2trkBarTarVol.Value;
+            App2lblTarVol.Text = App2trkBarTarVol.Value.ToString() + "%";
+        }
 
+        private void App2btnChangeVol_Click(object sender, EventArgs e)
+        {
+            changeVolume(App2TarVolpnl, App2CurVolpnl, 1, App2apps, App2processes);
+        }
 
-
-
-
-
+       
     }
 }
